@@ -1,0 +1,75 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "A simple pie chart with embedded data.",
+  "params": [
+    {
+      "name": "Country_Filter",
+      "bind": {
+        "input": "select",
+        "options": [
+          null,
+          "Australia",
+          "United States of America",
+          "China",
+          "India"
+        ],
+        "labels": ["Show All", "Australia", "USA", "China", "India"],
+        "name": "Country Selection"
+      }
+    },
+    {
+      "name": "AQI_Filter",
+      "bind": {
+        "input": "select",
+        "options": [
+          null,
+          "Good",
+          "Moderate",
+          "Unhealthy",
+          "Very Unhealthy",
+          "Hazardous"
+        ],
+        "labels": [
+          "Show All",
+          "Good AQI",
+          "Moderate AQI",
+          "Unhealthy AQI",
+          "Very Unhealthy AQI",
+          "Hazardous AQI"
+        ],
+        "name": "AQI Selection: "
+      }
+    }
+  ],
+  "data": {
+    "url": "https://raw.githubusercontent.com/jdun0012/Assignment23/main/AQI%20and%20Lat%20Long%20of%20Countries.csv"
+  },
+  "transform": [
+    {"filter": "Country_Filter == null || datum.Country == Country_Filter"},
+    {"filter": "AQI_Filter == null || datum.Ozone_AQI_Category == AQI_Filter"}
+  ],
+  "mark": {"type": "arc"},
+  "encoding": {
+    "theta": {"field": "City", "type": "nominal"},
+    "color": {
+      "field": "Ozone_AQI_Category",
+      "type": "ordinal",
+      "scale": {
+        "domain": [
+          "Good",
+          "Moderate",
+          "Unhealthy",
+          "Very Unhealthy",
+          "Hazardous"
+        ],
+        "range": ["#42FF33", "#F0FF33", "#FF2502", "#8C0371", "#920F02"]
+      }
+    },
+    "tooltip": [
+      {"field": "Ozone_AQI_Category", "type": "nominal"},
+      {"field": "Country"},
+      {"field": "City"}
+    ]
+  },
+  "config": {}
+}

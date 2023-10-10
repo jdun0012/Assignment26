@@ -1,4 +1,4 @@
-City, Region, Country, AirQuality, WaterPollution
+City, Region, Country, Air_Quality, Water_Pollution
 New York City, New York, United States of America,47.00,50.00
 Washington DC, District of Columbia, United States of America,66.00,49.00
 San Francisco, California, United States of America,61.00,43.00

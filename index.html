@@ -30,6 +30,12 @@
     <script src="COPie.js";></script>
     <script src="COBar.js";></script>
     <script src="OzonePie.js";></script>
+    <script src="NOPie.js";></script>
+    <script src="particleArea.js";></script>
+    <script src="water+air.js";></script>
+   
+   
+    
     
 
 </head>
@@ -43,16 +49,31 @@
               <p>By James Dunstan</p>
             </div>
           </div>    
+
+          <div class="AQI-Text-Above">
+            <p>Air quality is important to our health. When we breathe in oxygen, if there are any pollutants in the air, it can enter
+              out bloodstream and cause various health issues. Below is a map of the world showcasing each country's Air Quality Index
+            (AQI), find out how healthy your country's air is! </p>
+        </div>
     
     
     
           <div class="pure-g">
             <div class="pure-u-1-2">
               <div class="description-left">
-                <h2>AQI Index Map</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                  eiusmod tempor incididunt ut labore et dolore magna aliqua. Massa sapien faucibus et molestie ac feugiat
-                  sed. Egestas purus viverra accumsan in nisl. Egestas purus viverra accumsan in nisl.</p>
+                <h2>AQI Map</h2>
+                <p>
+                  The AQI Map shows the AQI category as well as the AQI value of a country and its representing cities.
+                  The AQI values are categorised from <span style="color: #89CE00">Good</span> (0-50), 
+                  <span style="color: #5BA300">Moderate</span> (51-100),
+                  <span style="color: #0073E6">Unhealthy</span> (101-200),
+                  <span style="color: #E6308A">Very Unhealthy</span> (200-300) and
+                  <span style="color: #B51963">Hazardous</span> (300+).
+                  The bigger the points on the map, the bigger the AQI value.
+                </p>
+                <p>Hover over a point to find out information about it! If you want to only look at specific categories or countries,
+                  then select them through the filters!
+                  The time graph will also change with the filters.</p>
               </div>
             </div>
              <div class="pure-u-1-3">
@@ -60,82 +81,194 @@
                <div id="AQIMap" class="vis-container">
                 </div> 
                 <div class="figure_1">
-                <p>Figure 1: AQI World Map</p>
+                <p><b>Figure 1:</b> AQI World Map showcasing the world's AQI category and values</p>
               </div>
                 
             </div> 
           </div>
 
 
+        <br>
 
+        <div class="Ozone_Title_Two">
+          <p>Ozone Health</p>
+          </div>
+          <br>
 
 
     <div class="Ozone_Title">
-    <p>Ozone Section</p>
+    <p>The Ozone Layer can be affected by poor air quality as pollutents such as NO2 can cause holes in said layer. In turn, as the ozone
+       layer weakens, more ultraviolet radiation can pour in and thus cause more health issues. Below are two pie charts show casing
+       the different Ozone and NO2 AQI values across the world.
+    </p>
   </div>
 
 
+      <br>
+  
 
-  <div class="pure-g">
-    <div class="pure-u-1-2">
-      <div class="description-left-ozone">
-        <h2>AQI Index Map</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Massa sapien faucibus et molestie ac feugiat
-          sed. Egestas purus viverra accumsan in nisl. Egestas purus viverra accumsan in nisl.</p>
-      </div>
-    </div>
-     <div class="pure-u-1-3">
+      <div class="pure-g">
+        <div class="pure-u-1-3">
+          <div class="description-left-ozone">
+            <h3>Ozone Layer Health</h3>
+            <p>To the right are two pie charts representing multiple countries' ozone and NO2 AQI values respecitively. If you want to look at specific
+              countries, use the select filters. For AQI category filtering, click on the legend to filter for it and click on a blank space to
+              undo that selection.
+            </p>
+            
+          </div>
+        </div>
+        
+        <div class="pure-u-1-3">
+          <div id="OzPie" class="vis-container-Ozone-Pie" style="margin-left: 15px;"></div>
+        </div>
+        
+        <div class="pure-u-1-3" style="width: 31.5%;">
+          <div id="NOTwoPie" class="vis-container_NOPie" style="margin-left: 15px;"></div>
+          <div class="figure_2">
+            <p><b>Figure 2:</b> Pie Chart displaying the ozone AQI of different countries and their cities</p>
+          </div>
+          <div class="figure_3">
+            <p><b>Figure 3:</b> Pie Chart displaying the NO2 AQI of different countries and their cities</p>
+          </div>
+          
+        </div>
       
-       <div id="OzPie" class="vis-container-Ozone-Pie">
-        </div> 
-        <div class="figure_6">
-        <p>Figure 6: Ozone Pie</p>
-      </div>
+    <br>
+
+
         
     </div> 
   </div>
-    
+     <br>
    <!-- <div id="left"></div>
     <div id="right"></div>-->
-    <h2>Ozone Air Quality Around the World</h2>
-    <div id="OzoneMap">
+  
+    
+    
+    <div class="CO2_Title">
+    <p>CO2 Health</p>
     </div>
     <br>
-    
-    
-    <div class="NO2_Title">
-    <p>NO2 Text</p>
-    </div>
 
-    <h3>NO2 Air Quality Around the World</h3>
-    <div id="NO2Map">
-    </div>
+    <div class="CO2_Section_Text">
+    <p>An increase in CO2 gas in an area can lead to not only environmental damage, but also to human health as we inhale larger
+      quanties that that is safe. Below is a bar chart that details the CO2 AQI Values across the world.
+    </p>
+  </div>
+    
     
 
-    <div class="pure-g">
-      <div class="pure-u-1-3">
-        <div class="CO_Description">
-          <h2>Three Equal Columns</h2>
-          <p>Using all three columns without merging. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Massa sapien faucibus et molestie ac feugiat
-            sed. Egestas purus viverra accumsan in nisl. Egestas purus viverra accumsan in nisl.</p>
+    
+
+
+      <div class="pure-g">
+        <div class="pure-u-1-2">
+          <div class="CO_Description">
+            <h2>CO2 AQI Bar Chart</h2>
+            <p>To the right is a bar chart displaying the CO2 AQI values around the world. The higher the bar, the higher or more combined
+              CO2 values there are for a given country.
+  
+            </p>
+            <p> You can drag the slider to alter the bar chart to show all values ABOVE the selected range. To see only specific countries,
+              use the drop down menu to select them.</p>
+          </div>
         </div>
+         <div class="pure-u-1-3">
+          
+           <div id="COBar" class="vis-container_COBar">
+            </div> 
+            <div class="figure_4">
+            <p><b>Figure 4:</b> Bar chart displaying the CO AQI value of different countries and their cities</p>
+          </div>
+            
+        </div> 
       </div>
-      <div class="pure-u-1-3">
-        <div id="COMap" class="vis-container_COMAP" style="margin-left: 15px;"></div>
-      </div>
-      <div class="pure-u-1-3" style="width: 31.5%;">
-        <div id="COBar" class="vis-container_COBar" style="margin-left: 15px;"></div>
-      </div>
+
+
+
+
+
+
+
 
 
     <!-- <div class="CO2_Title">
     <p>CO2 Text</p>
     </div> -->
     
-    <h4>CO Air Quality Around the World</h4>
-    <div id="COMap">
+   
+   <br>
+   <div class="Particle-Text-Title">
+    <p>Particle Concentration</p>
+   </div>
+   <br>
+
+   <div class="Particle-Text-Section">
+    <p>As discussed previously, ozone health can be affected by pollutants such as over abundance of NO2. The area chart Below
+      shows the relationship between the amount of ozone layer damage through the ozone AQI and the NO2 AQI for a given country.
+    </p>
+   </div>
+
+
+
+    <div class="pure-g">
+      <div class="pure-u-1-2">
+        <div class="Particle_Description">
+          <h2>Particle Area Map</h2>
+          <p>The chart to the right showcases a country's ozone vs its NO2 AQI. The further along each axis the value streches, the higher the 
+            AQI value for one or both axis.
+            
+          </p>
+          <p>If you want to see a specific country, use the 
+            drop down menu to select a country.</p>
+        </div>
+      </div>
+       <div class="pure-u-1-3">
+        
+         <div id="ParticleArea" class="vis-container_Particle">
+          </div> 
+          <div class="figure_5">
+          <p><b>Figure 5:</b> Area Map displaying a countries ozone vs its NO2 AQI value</p>
+        </div>
+          
+      </div> 
+    </div>
+   
+    <br>
+
+    <div class="water-title-top">
+      <p>How Air Quality Affects Water Quality</p>
+    </div>
+
+    <div class="water-title-bot">
+      <p>Air quality can have impacts on the water quality. When large amounts of air pollutants enter bodies of water, they contaminate
+        it and cause health issues when consumed or used in argriculture. Below is a scatterplot showing the relationship between 
+        water and air quality of a country. 
+      </p>
+    </div>
+
+    <div class="pure-g">
+      <div class="pure-u-1-2">
+        <div class="AirWater_Description">
+          <h2>Water vs Air Quality Scatterplot</h2>
+          <p>To the right is a scatterplot of air vs water quality of a given country and its cities. Higher number on either axis means
+            more pollution on either their air, water or both qualities.
+          </p>
+          <p>You can use the drop down menu to filter to specific counties</p>
+        </div>
+      </div>
+       <div class="pure-u-1-3">
+
+        <br>
+        
+         <div id="WaterAir" class="vis-container_WaterAir">
+          </div> 
+          <div class="figure_6">
+          <p><b>Figure 6:</b> Scatterplot showing a countries air quality vs its water quality</p>
+        </div>
+          
+      </div> 
     </div>
     
 
@@ -144,7 +277,7 @@
     </div>
 
     <script type="text/javascript">
-     var specVis1 = "./AQIWorldMap.json";
+     var specVis1 = "./AQIMap.json";
     
 
      vegaEmbed('#AQIMap', specVis1, { "actions": false });

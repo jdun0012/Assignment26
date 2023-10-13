@@ -1,7 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "description": "A simple pie chart with embedded data.",
-  "title": {"text":"Ozone Air Quality Around the World", "fontSize": 24},
+  "title": {"text": "NO2 Air Quality Around the World", "fontSize": 24},
   "height": 375,
   "width": 375,
   "params": [
@@ -40,21 +40,21 @@
     },
     {
       "name": "Legend_Filter",
-      "select": {"type": "point", "fields": ["Ozone_AQI_Category"]},
+      "select": {"type": "point", "fields": ["NO2_AQI_Category"]},
       "bind": "legend"
     }
   ],
   "data": {
-    "url": "https://raw.githubusercontent.com/jdun0012/Assignment23/main/AQI%20and%20Lat%20Long%20of%20Countries.csv"
+    "url": "https://raw.githubusercontent.com/jdun0012/Assignment26/main/AQI%20and%20Lat%20Long%20of%20Countries.csv"
   },
   "transform": [
     {"filter": "Country_Filter == null || datum.Country == Country_Filter"}
   ],
-  "mark": {"type": "arc"},
+  "mark": {"type": "arc", "innerRadius": 50},
   "encoding": {
     "theta": {"field": "City", "type": "nominal"},
     "color": {
-      "field": "Ozone_AQI_Category",
+      "field": "NO2_AQI_Category",
       "type": "ordinal",
       "title": "AQI Category",
       "legend": {"titleFontSize": 13},
@@ -75,14 +75,14 @@
     },
     "tooltip": [
       {
-        "field": "Ozone_AQI_Value",
+        "field": "NO2_AQI_Value",
         "type": "quantitative",
-        "title": "Ozone AQI Value"
+        "title": "NO2 AQI Value"
       },
       {
-        "field": "Ozone_AQI_Category",
+        "field": "NO2_AQI_Category",
         "type": "nominal",
-        "title": "Ozone AQI Category"
+        "title": "NO2 AQI Category"
       },
       {"field": "Country"},
       {"field": "City"}

@@ -1,10 +1,19 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "description": "A simple pie chart with embedded data.",
-  "title": {"text":"Ozone Air Quality Around the World", "fontSize": 24},
-  "height": 375,
-  "width": 375,
+  "width": 700,
+  "height": 400,
+  "title": {"text": "Carbon Monoxide Air Quality Around the World", "fontSize": 24},
   "params": [
+    {
+      "name": "CO_Controller",
+      "bind": {
+        "input": "range",
+        "min": 0,
+        "max": 140,
+        "step": 20,
+        "name": "CO AQI Value:"
+      }
+    },
     {
       "name": "Country_Filter",
       "bind": {
@@ -37,26 +46,31 @@
         ],
         "name": "Country Filter:"
       }
-    },
-    {
-      "name": "Legend_Filter",
-      "select": {"type": "point", "fields": ["Ozone_AQI_Category"]},
-      "bind": "legend"
     }
   ],
   "data": {
     "url": "https://raw.githubusercontent.com/jdun0012/Assignment23/main/AQI%20and%20Lat%20Long%20of%20Countries.csv"
   },
   "transform": [
-    {"filter": "Country_Filter == null || datum.Country == Country_Filter"}
+    {"filter": "datum.CO_AQI_Value > CO_Controller"},
+    {"filter": "Country_Filter == null || datum.Country == Country_Filter"},
+    {"filter": "isValid(datum.Country)"}
   ],
-  "mark": {"type": "arc"},
+  "mark": "bar",
   "encoding": {
-    "theta": {"field": "City", "type": "nominal"},
+    "y": {
+      "aggregate": "average",
+      "field": "CO_AQI_Value",
+      "type": "quantitative",
+      "title": "Average CO AQI Value",
+      "axis": {"labelFontSize": 15, "titleFontSize": 15}
+    },
+    "x": {"field": "Country", "type": "ordinal", "axis": {"labelFontSize": 15, "titleFontSize": 15}},
     "color": {
-      "field": "Ozone_AQI_Category",
-      "type": "ordinal",
+      "field": "CO_AQI_Category",
+      "type": "nominal",
       "title": "AQI Category",
+      
       "legend": {"titleFontSize": 13},
       "scale": {
         "domain": [
@@ -69,23 +83,9 @@
         "range": ["#89CE00", "#5BA300", "#0073E6", "#E6308A", "#B51963"]
       }
     },
-    "opacity": {
-      "condition": {"param": "Legend_Filter", "value": 1},
-      "value": 0.1
-    },
     "tooltip": [
-      {
-        "field": "Ozone_AQI_Value",
-        "type": "quantitative",
-        "title": "Ozone AQI Value"
-      },
-      {
-        "field": "Ozone_AQI_Category",
-        "type": "nominal",
-        "title": "Ozone AQI Category"
-      },
-      {"field": "Country"},
-      {"field": "City"}
+      {"field": "CO_AQI_Value", "type": "nominal", "title": "Average CO AQI"},
+      {"field": "Country"}
     ]
   },
   "config": {}

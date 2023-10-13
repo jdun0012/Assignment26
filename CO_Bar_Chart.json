@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": 800,
+  "width": 500,
   "height": 450,
   "title": "Carbon Monoxide Air Quality Around the World",
   "params": [
